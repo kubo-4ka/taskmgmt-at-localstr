@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>シンプル ToDo（LocalStorage）</title>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <main class="container">
+            <header class="app-header">
+                <h1>シンプル ToDo</h1>
+                <p class="sub">ローカルストレージで自動保存</p>
+            </header>
+
+            <section class="add-box" aria-label="新規タスク追加">
+                <input id="newTaskInput" type="text" placeholder="タスクを入力して Enter または ＋追加" autocomplete="off" />
+                <button id="addBtn" class="primary">＋ 追加</button>
+            </section>
+
+            <section class="toolbar" aria-label="操作">
+                <div class="filters" role="tablist" aria-label="フィルタ">
+                    <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">すべて</button>
+                    <button class="filter-btn" data-filter="active" role="tab" aria-selected="false">未完了</button>
+                    <button class="filter-btn" data-filter="done" role="tab" aria-selected="false">完了</button>
+                </div>
+                <div class="tools">
+                    <button id="clearDoneBtn" class="danger ghost">完了一括削除</button>
+                </div>
+            </section>
+
+            <section>
+                <ul id="taskList" class="task-list" aria-live="polite"></ul>
+            </section>
+
+            <footer class="app-footer">
+                <div class="stats"><span id="leftCount">0</span> 件の未完了</div>
+                <div class="tip">ヒント：内容をダブルクリックで編集できます</div>
+            </footer>
+        </main>
+
+        <script src="./app.js"></script>
+    </body>
+</html>
